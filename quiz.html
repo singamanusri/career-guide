@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6ff;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c2c54;
+        }
+
+        .question {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Career Quiz</h1>
+
+    <div class="question">
+        <p><b>1. What do you enjoy the most?</b></p>
+        <input type="radio" name="interest" value="tech"> Coding <br>
+        <input type="radio" name="interest" value="design"> Designing <br>
+        <input type="radio" name="interest" value="teach"> Teaching <br>
+    </div>
+
+    <button onclick="showResult()">Submit Quiz</button>
+
+    <script>
+        function showResult() {
+            let choices = document.getElementsByName("interest");
+            let selectedValue = "";
+
+            for (let i = 0; i < choices.length; i++) {
+                if (choices[i].checked) {
+                    selectedValue = choices[i].value;
+                }
+            }
+
+            if (selectedValue === "tech") {
+                window.location.href = "result-tech.html";
+            } 
+            else if (selectedValue === "design") {
+                window.location.href = "result-design.html";
+            } 
+            else if (selectedValue === "teach") {
+                window.location.href = "result-teach.html";
+            } 
+            else {
+                alert("Please select an option");
+            }
+        }
+    </script>
+</body>
+</html>
